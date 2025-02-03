@@ -1,0 +1,44 @@
+{
+  "roles": {
+    "admin": {
+      "email": "housing.superadmin@gizasystems.com",
+      "password": "soWLMzUqfx"
+    },
+    "operator":{
+      "email": "Hoperator@gmail.con",
+      "password": "4z3AiI3Vnj"
+    },
+    "inspector":{
+      "email": "Inspector1@neom.com",
+      "password": "24ae29cb-ff23-4ed8-9a6c-e09477902fef"
+    },
+    "lostandfound":{
+      "email": "marinaLostAndFoundOperator@gmail.com",
+      "password": "fYXDHN7dI5"
+    },
+    "manager1":{
+      "email": "HM1@gmail.com",
+      "password": "66316464-be3c-4390-b7e5-68e8c364704e"
+    },
+    "manager2":{
+      "email": "HM2@gmail.com",
+      "password": "iQV9yQNQAi"
+    },
+    "manager3":{
+      "email": "HM3@gmail.com",
+      "password": "dsiHHFPt3W"
+    },
+    "reciptionist":{
+      "email": "reciptionist@neom.com",
+      "password": "GzxdQHd5QF"
+    },
+    "dashboard":{
+      "email": "dashboard@dash.com",
+      "password": "KlFTPUCcjE"
+    },
+    "auditor":{
+      "email": "marinanabil17@gmail.com",
+      "password": "YOxswogghk"
+    }
+  }
+}
