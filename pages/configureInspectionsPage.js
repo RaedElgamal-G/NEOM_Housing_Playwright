@@ -3,18 +3,20 @@ exports.ConfigureInspections = class ConfigureInspectionsPage {
 
     constructor(page) {
         this.page = page;
-        this.configureInspectionsPageTitle = page.locator('.page-name span');
+        this.configureInspectionsPageTitle = page.locator("//div[@class='page-name']//span[1]");
         this.communityList = page.locator('#b3-Community');
         this.unitTypeList = page.locator('#b3-UnityType');
         this.formsList = page.locator('#b3-InspetionForm');
         this.addButton = page.getByRole('button', {name: 'Add'});
-        this.newItemName = page.locator('.form-control.OSFillParent[aria-required="true"]');
+        this.newItemNameField = page.locator('.form-control.OSFillParent[aria-required="true"]');
+        this.availabilityCheckbox = page.locator("//input[@class='form-control OSFillParent' and @aria-required='true']/following::input[1]");
+        this.descriptionField = page.locator("//input[@class='form-control OSFillParent' and @aria-required='false']");
         this.submitButton = page.getByRole('button', {name: 'submit'});
         this.successMessage = page.locator('.feedback-message-text');
     }
 
     async assertOnConfigureInspectionPageTitle() {
-        await expect(await this.configureInspectionsPageTitle).toBeVisible();
+        await expect(await this.configureInspectionsPageTitle).toContainText('inspections');
 
     }
 
@@ -27,7 +29,7 @@ exports.ConfigureInspections = class ConfigureInspectionsPage {
     }
 
     async selectForm(label) {
-        await this.formsList.selectOption({label:label});
+        await this.formsList.selectOption({label: label});
     }
 
     async clickOnAddButton() {
@@ -35,11 +37,13 @@ exports.ConfigureInspections = class ConfigureInspectionsPage {
     }
 
     async assertNewFormIsInitiated() {
-        await expect(await this.newItemName).toBeVisible();
+        await expect(await this.newItemNameField).toBeVisible();
     }
 
-    async enterNewFormData(formTitle) {
-        await this.newItemName.fill(formTitle);
+    async enterNewFormData(formData) {
+        await this.newItemNameField.fill(formData);
+        await this.availabilityCheckbox.click();
+        await this.descriptionField.fill(formData);
     }
 
     async clickOnSubmitButton() {
