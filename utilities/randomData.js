@@ -18,7 +18,9 @@ export function generateDataRandomly() {
     export function generateRandomNumbers() {
         let randomNumber = Math.floor(Math.random() * 99) + 1;
         console.log(randomNumber);
-        return randomNumber.toString();
+        return randomNumber.toString()
     }
+
+
 
 

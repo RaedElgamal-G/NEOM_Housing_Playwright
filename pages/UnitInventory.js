@@ -4,7 +4,7 @@ export class UnitInventory {
   static sectionName = "karimPlaywriten";
 
   constructor(page) {
-    this.page = page;
+    this.page = page
 
     this.unitInventoryButton = page.getByRole('menuitem', { name: 'Unit Inventory' });
     this.communityList = page.locator('#b3-b6-Community_DropDown-container').locator('role=combobox');

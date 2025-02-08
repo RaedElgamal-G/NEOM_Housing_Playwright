@@ -45,3 +45,4 @@ test('Add Item To An Existed Section From Unit Inventory’s Configurations Tab'
   await unitInventory.clickOnAddItemButton ()
 
 });
+

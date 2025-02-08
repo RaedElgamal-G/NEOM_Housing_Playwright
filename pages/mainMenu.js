@@ -13,7 +13,7 @@ exports.MainMenu = class MainMenuPage {
     }
 
     async clickOnExpandMenuButton(){
-        await this.expandMenuButton.click();
+        await this.expandMenuButton.click()
     }
 
     async asserOnMainMenuTitle(){
