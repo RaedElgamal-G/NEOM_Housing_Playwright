@@ -7,10 +7,13 @@ exports.MainMenu = class MainMenuPage {
         this.mainMenuTitle = page.locator('.side-menu-top-logo > span');
         this.configurationsTab = page.locator("//div[@id='b2-b30-Menu']")
         this.configureInspectionsTab = page.getByText('Configure inspections');
+        ////Karim\\\\
+        this.menuButton = page.locator ("//*[@class='menu-icon']");
+        this.configButton=page.locator ("//span[@class='hidden-text' and text()='Configuration']");
     }
 
     async clickOnExpandMenuButton(){
-        await this.expandMenuButton.click();
+        await this.expandMenuButton.click()
     }
 
     async asserOnMainMenuTitle(){
@@ -20,6 +23,14 @@ exports.MainMenu = class MainMenuPage {
     async gotoConfigureInspectionsTab(){
         await this.configurationsTab.click();
         await expect(await this.configureInspectionsTab).toBeVisible()
-        await this.configureInspectionsTab.click();
+        await this.configureInspectionsTab.click()
     }
+    async OpenSideMenu(){
+
+     await this.expandMenuButton.click();
+     await this.configurationsTab.click();
+
+
+
+     }
 }
