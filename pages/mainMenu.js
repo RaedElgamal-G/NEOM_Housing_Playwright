@@ -23,7 +23,7 @@ exports.MainMenu = class MainMenuPage {
     async gotoConfigureInspectionsTab(){
         await this.configurationsTab.click();
         await expect(await this.configureInspectionsTab).toBeVisible()
-        await this.configureInspectionsTab.click();
+        await this.configureInspectionsTab.click()
     }
     async OpenSideMenu(){
 
