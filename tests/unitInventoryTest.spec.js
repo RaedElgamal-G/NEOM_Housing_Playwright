@@ -30,7 +30,7 @@ test.beforeEach(async ({ page }) => {
 
 test('Add Item To An Existed Section From Unit Inventory’s Configurations Tab', async ({ page }) => {
   await pageHeader.assertOnUserTitle("Housing Super Admin");
-  await mainMenu.OpenSideMenu();
+  await mainMenu.OpenSideMenu()
   await unitInventory.selectCommunityToAddNewSection()
   await unitInventory.selectUnitTypeToAddNewSection()
   await unitInventory.fillSectionNameAndDescription(fillSectionName,fillSectionDescription);
