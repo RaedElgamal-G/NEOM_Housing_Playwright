@@ -32,7 +32,6 @@ test.describe("configureInspectionsTestCases", () => {
     })
 
     test('Create a Pre-departure Inspection Form', async ({}) => {
-
         await loginPage.assertOnLoginPageTitle();
         await loginPage.loginWithValidCredentials(roles.admin.email, roles.admin.password);
         await pageHeader.assertOnUserTitle("Housing Super Admin");
@@ -67,9 +66,6 @@ test.describe("configureInspectionsTestCases", () => {
         await configureInspectionsPage.enterNewFormData(formData);
         await configureInspectionsPage.clickOnSubmitButton();
         await configureInspectionsPage.assertNewFormIsCreated();
-
     })
 
 })
-
-
