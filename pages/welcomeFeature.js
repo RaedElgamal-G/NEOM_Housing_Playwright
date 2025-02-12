@@ -13,6 +13,9 @@ exports.WelcomeFeatures=class WelcomeFeatures{
         this.email_body_text_area=this.iframe.locator('//body[@contenteditable="true"]')
         this.save_button=page.locator('//button[text()="Save"]')
         this.cancel_button=page.locator('//button[text()="Cancel"]')
+        this.inactive_button=page.locator('//input[@name="b3-b1-Activate_Radio_Group"][@value="False"]')
+        this.search_button=page.locator('//div[@class="OSInline"]')
+        this.featureName=page.locator("(//td[@data-header='Feature Name']/div)[1]")
     }
    
     async assertOnWelcomeFeaturePageTitle(){
@@ -40,5 +43,13 @@ exports.WelcomeFeatures=class WelcomeFeatures{
         await this.email_body_text_area.click();
         await this.email_body_text_area.fill(text);
         await this.save_button.click();
+        await this.inactive_button.click();
+        await this.search_button.click();
     }
+    // async assertOnFeatureName(expectedText) {
+    //     const actualText = await this.featureName.textContent();
+    //     expect(actualText.trim()).toContain(expectedText);
+    // }
+    
+   
 }
