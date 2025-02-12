@@ -1,5 +1,8 @@
 // @ts-check
 import {defineConfig, devices} from '@playwright/test';
+
+
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -23,6 +26,7 @@ export default defineConfig({
     workers: process.env.CI ? 1 : undefined,
     /* Reporter to use. See https://playwright.dev/docs/test-reporters */
     reporter: 'html',
+    timeout: 60000,
     /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 
     use: {
@@ -51,27 +55,34 @@ export default defineConfig({
 
         {
             name: 'firefox',
-            use: {...devices['Desktop Firefox']},
-            headless: true,
+            use: {...devices['Desktop Firefox'],
+                headless: true,
+
+            },
         },
 
         {
             name: 'webkit',
-            use: {...devices['Desktop Safari']},
-            headless: true,
+            use: {...devices['Desktop Safari'],
+                headless: true,
+
+            },
         },
 
         /* Test against mobile viewports. */
         {
           name: 'Mobile Chrome',
-          use: { ...devices['iPad Pro 11'] },
+          use: { ...devices['iPad Pro 11 (2020)'] ,
+          use: { ...devices['iPad Pro 13'] },
           headless:true,
+          }
 
         },
         // {
         //   name: 'Mobile Safari',
         //   use: { ...devices['iPhone 12'] },
         // },
+        //
 
         /* Test against branded browsers. */
         // {
