@@ -9,10 +9,14 @@ exports.MainMenu = class MainMenuPage {
         this.configureInspectionsTab = page.getByText('Configure inspections');
         this.welcomeFeature_tab=page.locator('//span[text()="Welcome Features"]')
 
+        ////Karim\\\\
+        this.menuButton = page.locator ("//*[@class='menu-icon']");
+        this.configButton=page.locator ("//span[@class='hidden-text' and text()='Configuration']");
+
     }
 
     async clickOnExpandMenuButton(){
-        await this.expandMenuButton.click();
+        await this.expandMenuButton.click()
     }
 
     async asserOnMainMenuTitle(){
@@ -22,11 +26,19 @@ exports.MainMenu = class MainMenuPage {
     async gotoConfigureInspectionsTab(){
         await this.configurationsTab.click();
         await expect(await this.configureInspectionsTab).toBeVisible()
-        await this.configureInspectionsTab.click();
+        await this.configureInspectionsTab.click()
     }
 
     async openWelcomeFeaturePage(){
         await this.configurationsTab.click();
         await this.welcomeFeature_tab.click();
     }
+    async OpenSideMenu(){
+
+     await this.expandMenuButton.click();
+     await this.configurationsTab.click();
+
+
+
+     }
 }

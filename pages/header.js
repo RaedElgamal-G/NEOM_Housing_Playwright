@@ -9,3 +9,4 @@ exports.Header = class PageHeader {
         await expect(await this.userTitle).toHaveText(title);
     }
 }
+

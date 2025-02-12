@@ -7,6 +7,9 @@ exports.Login = class LoginPage{
         this.emailTextBox = page.locator('[id="b1-Input_UsernameVal"]');
         this.passwordTextBox = page.getByLabel('Password', { exact: true });
         this.loginButton = page.getByRole("button", { name: "Login", exact: true});
+        this.emailField = page.locator('#b1-Input_UsernameVal');
+        /*this.passwordField = page.locator('#b1-Input_PasswordVal');
+        this.loginButton = page.locator('.login-btn');,m*/
     }
 
     async goto(){

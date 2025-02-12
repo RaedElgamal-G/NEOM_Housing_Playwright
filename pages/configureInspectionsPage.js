@@ -54,3 +54,4 @@ exports.ConfigureInspections = class ConfigureInspectionsPage {
         await expect(await this.successMessage.textContent()).toContain('added successfully');
     }
 }
+
